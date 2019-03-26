@@ -43,7 +43,7 @@ namespace UnitTestProject_Normal
                 //Enter value in email field
                 driver.FindElement(By.Id("ap_email")).SendKeys("andrii.zhulai@yahoo.com");
                 //Enter value in password field
-                driver.FindElement(By.Id("ap_password")).SendKeys("LeBron_23");
+                driver.FindElement(By.Id("ap_password")).SendKeys("andrii.zhulai@yahoo.com");
                 //Click on the button "Sign in"
                 driver.FindElement(By.Id("signInSubmit")).Click();
                 //Find "Hello Andrii"
@@ -55,10 +55,10 @@ namespace UnitTestProject_Normal
                 }
                 else
                 {
-                    RedMessage("ERROR, Element is not dispalyed");
+                    RedMessage("ERROR, Elemen_______is not dispalyed");
                 }
 
-
+                ///new commit test
 
 
 
