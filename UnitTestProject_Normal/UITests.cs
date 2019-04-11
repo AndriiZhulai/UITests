@@ -30,7 +30,7 @@ namespace UnitTestProject_Normal
                 driver = new ChromeDriver();
                 var options = new ChromeOptions();
                 options.AddArgument("no-sandbox");
-                //driver.Manage().Window.Maximize();
+                driver.Manage().Window.Maximize();
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
                 driver.Navigate().GoToUrl("https://www.amazon.com/");
                 //Mouse Hover on Sign in
@@ -51,26 +51,16 @@ namespace UnitTestProject_Normal
                 //Find "Hello Andrii"
                 IWebElement element = driver.FindElement(By.CssSelector("#nav-link-accountList > span.nav-line-3"));
 
-                if (element.Displayed)
-                {
-                    GreenMessage("Hello, Andrii  ____ is present on the page");
-                }
-                else
-                {
-                    RedMessage("ERROR, Elemen_______is not dispalyed");
-                }
+                //if (element.Displayed)
+                //{
+                //    GreenMessage("Hello, Andrii  ____ is present on the page");
+                //}
+                //else
+                //{
+                //    RedMessage("ERROR, Elemen_______is not dispalyed");
+                //}
 
-                ///new commit test
-
-
-
-
-
-
-
-
-                //driver.FindElement(By.Name("loginfmt")).SendKeys("anzh@simcorp.com");
-                //driver.FindElement(By.Id("idSIButton9")).Click();
+                ///new commit test                
             }
 
             private void GreenMessage(string message)
@@ -91,30 +81,27 @@ namespace UnitTestProject_Normal
             [Test]
             public void Findsome()
             {
-            //    //IWebElement element=driver.FindElement(By.LinkText("My Department"));
-            //    //if (element.Displayed)
-            //    //{
-            //    //    GreenMessage("My Department tab is present on the page");
-            //    //}
-            //    //else
-            //    //{
-            //    //    RedMessage("ERROR, Element is not dispalyed");
-            //    //}
-
-            //    driver.FindElement(By.LinkText("My Department"));
-            //    Console.WriteLine("My Department tab is present on the page");
-            //    driver.FindElement(By.LinkText("Projects"));
-            //    Console.WriteLine("Project tab is present on the page");
-            //    driver.FindElement(By.LinkText("Clients"));
-            //    Console.WriteLine("Clients tab is present on the page");
-            //    driver.FindElement(By.LinkText("Divisions"));
-            //    Console.WriteLine("Divisions tab is present on the page");
-            //    driver.FindElement(By.LinkText("Employee"));
-            //    Console.WriteLine("Employee tab is present on the page");
+                driver.FindElement(By.Id("twotabsearchtextbox"));
+                Console.WriteLine("Search field is present on the page");
             }
 
 
-            
+            [Test]
+            public void Findsomeinformation()
+            {
+                driver.FindElement(By.Id("twotabsearchtextbox")).SendKeys("lebron james shoes");
+                driver.FindElement(By.CssSelector("#nav-search > form > div.nav-right > div > input")).Click();
+
+
+
+            }
+
+
+
+
+
+
+
 
 
             [TearDown]
