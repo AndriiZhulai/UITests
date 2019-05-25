@@ -6,6 +6,7 @@ using OpenQA.Selenium.Support;
 using System;
 using System.Linq;
 using System.Drawing.Imaging;
+using System.Collections.Generic;
 
 namespace UnitTestProject_Normal
 {
@@ -13,7 +14,8 @@ namespace UnitTestProject_Normal
     {
         public class UnitTest1
         {
-            IWebDriver driver;
+            //IWebDriver driver;
+            IWebDriver driver = new ChromeDriver();
             // private IWebElement element;;
 
             public void TakeScreenshot(IWebDriver driver, string saveLocation)
@@ -27,7 +29,7 @@ namespace UnitTestProject_Normal
             [SetUp]
             public void SetUp()
             {
-                driver = new ChromeDriver();
+                //driver = new ChromeDriver();
                 var options = new ChromeOptions();
                 options.AddArgument("no-sandbox");
                 driver.Manage().Window.Maximize();
@@ -50,16 +52,6 @@ namespace UnitTestProject_Normal
                 driver.FindElement(By.Id("signInSubmit")).Click();
                 //Find "Hello Andrii"
                 IWebElement element = driver.FindElement(By.CssSelector("#nav-link-accountList > span.nav-line-3"));
-
-                //if (element.Displayed)
-                //{
-                //    GreenMessage("Hello, Andrii  ____ is present on the page");
-                //}
-                //else
-                //{
-                //    RedMessage("ERROR, Elemen_______is not dispalyed");
-                //}
-
                 ///new commit test                
             }
 
@@ -82,19 +74,44 @@ namespace UnitTestProject_Normal
             public void Findsome()
             {
                 driver.FindElement(By.Id("twotabsearchtextbox"));
-                Console.WriteLine("Search field is present on the page");
+                //Console.WriteLine("Search field is present on the page");
+                IWebElement incorerrectxpath = driver.FindElement(By.Id("nav-link-accountLis"));
+
+                // try
+                //{
+                //    if (incorerrectxpath.Displayed)
+                //    {
+                //        GreenMessage("I see this element");
+                //    }
+                //}
+
+                // catch (NoSuchElementException)
+                //{
+                //    RedMessage("I can not see this element");
+                //}
+
+                if (incorerrectxpath.Displayed)
+                {
+                    GreenMessage("Hello, Andrii  ____ is present on the page");
+                }
+                else
+                {
+                    RedMessage("ERROR, Elemen_______is not dispalyed");
+                }
+
             }
 
 
-            [Test]
-            public void Findsomeinformation()
-            {
-                driver.FindElement(By.Id("twotabsearchtextbox")).SendKeys("lebron james shoes");
-                driver.FindElement(By.CssSelector("#nav-search > form > div.nav-right > div > input")).Click();
-
-
-
-            }
+            //[Test]
+            //public void Findsomeinformation()
+            //{
+            //    driver.FindElement(By.Id("twotabsearchtextbox")).SendKeys("lebron james shoes");
+            //    driver.FindElement(By.CssSelector("#nav-search > form > div.nav-right > div > input")).Click();
+            //    //screenshot
+            //    driver.FindElement(By.Id("twotabsearchtextbox")).SendKeys("rqwqwrwqrqwrqwrwqrqw");
+            //    driver.FindElement(By.CssSelector("#nav-search > form > div.nav-right > div > input")).Click();
+            //   // driver.FindElement(By.XPath("//*[@id=\"search\"]/div[1]/div[2]/div/span[2]/div/span[1]")).Text;
+            //}
 
 
 
