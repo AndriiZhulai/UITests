@@ -146,7 +146,7 @@ namespace UnitTestProject_Normal
             [Test]
             public void Cart()
             {
-                driver.FindElement(By.XPath("//*[@id=\"nav-cartууууу\"]")).Click();
+                driver.FindElement(By.XPath("//*[@id=\"nav-cart\"]")).Click();
                 IWebElement body = driver.FindElement(By.TagName("body"));
                 //find text in body
                 // Assert.IsTrue(body.Text.Contains("{{{{{{{{{{{{{{{"));
