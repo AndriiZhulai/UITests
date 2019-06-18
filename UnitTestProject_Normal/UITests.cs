@@ -34,11 +34,10 @@ namespace UnitTestProject_Normal
             [SetUp]
             public void SetUp()
             {
-                //driver = new ChromeDriver();
-                ChromeOptions option = new ChromeOptions();
-                option.AddArgument("--headless");
-                driver = new ChromeDriver(option);
-                option.AddArgument("no-sandbox");
+                driver = new ChromeDriver();
+                var options = new ChromeOptions();
+                options.AddArgument("no-sandbox");
+                driver.Manage().Window.Maximize();
 
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
                 driver.Navigate().GoToUrl("https://www.amazon.com/");
