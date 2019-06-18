@@ -35,9 +35,11 @@ namespace UnitTestProject_Normal
             public void SetUp()
             {
                 //driver = new ChromeDriver();
-                var options = new ChromeOptions();
-                options.AddArgument("no-sandbox");
-                driver.Manage().Window.Maximize();
+                ChromeOptions option = new ChromeOptions();
+                option.AddArgument("--headless");
+                driver = new ChromeDriver(option);
+                option.AddArgument("no-sandbox");
+
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
                 driver.Navigate().GoToUrl("https://www.amazon.com/");
                 //Mouse Hover on Sign in
