@@ -19,8 +19,8 @@ namespace UnitTestProject_Normal
     {
         public class UnitTest1
         {
-            //IWebDriver driver;
-            IWebDriver driver = new ChromeDriver();
+            IWebDriver driver;
+            //IWebDriver driver = new ChromeDriver();
             // private IWebElement element;;
 
             public void TakeScreenshot(IWebDriver driver, string saveLocation)
@@ -147,32 +147,18 @@ namespace UnitTestProject_Normal
             [Test]
             public void Cart()
             {
-                driver.FindElement(By.XPath("//*[@id=\"nav-cart\"]")).Click();
-                IWebElement body = driver.FindElement(By.TagName("body"));
-                //find text in body
-                // Assert.IsTrue(body.Text.Contains("{{{{{{{{{{{{{{{"));
-
-                //if (body.Displayed)
-                //{
-                //    Console.WriteLine("test passed");
-                //}
+                
                 try
                 {
+                    IWebElement body = driver.FindElement(By.TagName("boy"));
                     Console.WriteLine("good");
+                    
                 }
                 catch (NoSuchElementException e)
                 {
-                    throw new Exception("Unecspected element" + e.Message);
+                    Console.WriteLine("Unecspected element" + e.Message);
                 }
-                //if (body.Text.Contains("{{{{{{{{{{{{{{{")) 
-                //{
-                //    Console.WriteLine("good");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("bad");
-
-                //}
+                
 
 
 
