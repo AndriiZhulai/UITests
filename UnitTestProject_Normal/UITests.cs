@@ -2,16 +2,9 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support;
-using System;
-using System.Linq;
-using System.Drawing.Imaging;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
-using System.Collections.ObjectModel;
+using System;
+using System.Collections.Generic;
 
 namespace UnitTestProject_Normal
 {
@@ -20,6 +13,7 @@ namespace UnitTestProject_Normal
         public class UnitTest1
         {
             IWebDriver driver;
+
             //IWebDriver driver = new ChromeDriver();
             // private IWebElement element;;
 
@@ -147,20 +141,17 @@ namespace UnitTestProject_Normal
             [Test]
             public void Cart()
             {
-                
+
                 try
                 {
-                    IWebElement body = driver.FindElement(By.TagName("boy"));
+                    IWebElement body = driver.FindElement(By.TagName("body"));
                     Console.WriteLine("good");
-                    
+
                 }
                 catch (NoSuchElementException e)
                 {
                     Console.WriteLine("Unecspected element" + e.Message);
                 }
-                
-
-
 
 
             }
@@ -177,16 +168,48 @@ namespace UnitTestProject_Normal
             //    driver.FindElement(By.LinkText("Help"));
             //    driver.FindElement(By.LinkText("Registry"));
             //    Console.WriteLine("All links are present on the page");
-              
+            //}
 
+            [Test]
+            public void Department()
+            {
+                Actions action = new Actions(driver);
+                IWebElement Departmets = driver.FindElement(By.LinkText("Departments"));
+                action.MoveToElement(Departmets).Perform();
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+                driver.FindElement(By.LinkText("Prime Video"));
+                Console.WriteLine("Prime Video is present");
+
+                //Важлививй блок, коли дропдаун лыст складаэться  оптіонз (1б2б3 і так далі)
+                //IWebElement element = driver.FindElement(By.LinkText("Departments"));
+                //SelectElement selectElement = new SelectElement(element);
+                //IList<IWebElement> elements = selectElement.Options;
+                //Console.WriteLine(elements.Count);
+                //foreach (var item in elements)
+                //{
+                //    Console.WriteLine(item.Text);
+                //}
+            }
+
+            [Test]
+            public void AndriiAmazon()
+            {
+                driver.FindElement(By.LinkText("Andrii's Amazon.com")).Click();
+                IReadOnlyCollection<IWebElement> elements = driver.FindElements(By.XPath("//*[@id=\"navFooter\"]/div[1]/div/div[5]/ul/li"));
+                Console.WriteLine(elements.Count);
+
+                if (elements.Count == 4)
+                {
+                    Console.WriteLine("Test passed");
+                }
+                else
+                {
+                    Console.WriteLine("Test failed");
+                }
                
 
 
-
-            //}
-
-
-
+            }
 
 
 
@@ -201,4 +224,6 @@ namespace UnitTestProject_Normal
         }
     }
 }
+
+
 
