@@ -46,7 +46,9 @@ namespace UnitTestProject_Normal
                 //login with correct credentials
                 //Enter value in email field
                 driver.FindElement(By.Id("ap_email")).SendKeys("andrii.zhulai@yahoo.com");
-                //Enter value in password field
+                //Click on the button Continue
+                driver.FindElement(By.Id("continue")).Click();
+                //Enter password in the field password
                 driver.FindElement(By.Id("ap_password")).SendKeys("andrii.zhulai@yahoo.com");
                 //Click on the button "Sign in"
                 driver.FindElement(By.Id("signInSubmit")).Click();
@@ -205,9 +207,17 @@ namespace UnitTestProject_Normal
                 else
                 {
                     Console.WriteLine("Test failed");
-                }
-               
+                }            
+            }
 
+            [Test]
+            public void GiftCards()
+            {
+                driver.FindElement(By.LinkText("Gift Cards")).Click();
+                IReadOnlyCollection<IWebElement> element = driver.FindElements(By.CssSelector("#contentGrid_908467 > div > div:nth-child(2) > div"));
+                Console.WriteLine(element.Count);
+
+                //css selector for three elememts
 
             }
 
