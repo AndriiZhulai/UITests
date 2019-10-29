@@ -139,6 +139,10 @@ namespace UnitTestProject_Normal
             //        Console.WriteLine(item.Text);
             //    }          
             //}
+            /// <summary>
+            /// /
+            /// </summary>
+            /// gsdfgsdfg
 
             [Test]
             public void Cart()
@@ -214,7 +218,7 @@ namespace UnitTestProject_Normal
             public void GiftCards()
             {
                 driver.FindElement(By.LinkText("Gift Cards")).Click();
-                IReadOnlyCollection<IWebElement> element = driver.FindElements(By.CssSelector("#contentGrid_908467 > div > div:nth-child(2) > div"));
+                IReadOnlyCollection<IWebElement> element = driver.FindElements(By.ClassName("div[class='bxc-grid__column  bxc-grid__column--4-of-12   bxc-grid__column--light']"));
                 Console.WriteLine(element.Count);
 
                 //css selector for three elememts
