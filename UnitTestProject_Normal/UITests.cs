@@ -45,16 +45,16 @@ namespace UnitTestProject_Normal
                 driver.FindElement(By.CssSelector("#nav-flyout-ya-signin >a>span")).Click();
                 //login with correct credentials
                 //Enter value in email field
-                driver.FindElement(By.Id("ap_email")).SendKeys("andrii.zhulai@yahoo.com");
-                //Click on the button Continue
-                driver.FindElement(By.Id("continue")).Click();
-                //Enter password in the field password
-                driver.FindElement(By.Id("ap_password")).SendKeys("andrii.zhulai@yahoo.com");
-                //Click on the button "Sign in"
-                driver.FindElement(By.Id("signInSubmit")).Click();
-                //Find "Hello Andrii"
-                IWebElement element = driver.FindElement(By.CssSelector("#nav-link-accountList > span.nav-line-3"));
-                ///new commit test                
+                //driver.FindElement(By.Id("ap_email")).SendKeys("andrii.zhulai@yahoo.com");
+                ////Click on the button Continue
+                //driver.FindElement(By.Id("continue")).Click();
+                ////Enter password in the field password
+                //driver.FindElement(By.Id("ap_password")).SendKeys("andrii.zhulai@yahoo.com");
+                ////Click on the button "Sign in"
+                //driver.FindElement(By.Id("signInSubmit")).Click();
+                ////Find "Hello Andrii"
+                //IWebElement element = driver.FindElement(By.CssSelector("#nav-link-accountList > span.nav-line-3"));
+                /////new commit test                
             }
 
             //private void GreenMessage(string message)
