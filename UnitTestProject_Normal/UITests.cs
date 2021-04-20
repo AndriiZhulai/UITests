@@ -148,16 +148,17 @@ namespace UnitTestProject_Normal
             public void Cart()
             {
 
-                try
-                {
-                    IWebElement body = driver.FindElement(By.TagName("body"));
-                    Console.WriteLine("good");
+                /* try
+                 {
+                     IWebElement body = driver.FindElement(By.TagName("body"));
+                     Console.WriteLine("good");
 
-                }
-                catch (NoSuchElementException e)
-                {
-                    Console.WriteLine("Unecspected element" + e.Message);
-                }
+                 }
+                 catch (NoSuchElementException e)
+                 {
+                     Console.WriteLine("Unecspected element" + e.Message);
+                 }*/
+                Console.WriteLine("test");
 
 
             }
@@ -176,7 +177,7 @@ namespace UnitTestProject_Normal
             //    Console.WriteLine("All links are present on the page");
             //}
 
-            [Test]
+           /* [Test]
             public void Department()
             {
                 Actions action = new Actions(driver);
@@ -195,9 +196,9 @@ namespace UnitTestProject_Normal
                 //{
                 //    Console.WriteLine(item.Text);
                 //}
-            }
+            }*/
 
-            [Test]
+           /* [Test]
             public void AndriiAmazon()
             {
                 driver.FindElement(By.LinkText("Andrii's Amazon.com")).Click();
@@ -212,9 +213,9 @@ namespace UnitTestProject_Normal
                 {
                     Console.WriteLine("Test failed");
                 }            
-            }
+            }*/
 
-            [Test]
+           /* [Test]
             public void GiftCards()
             {
                 driver.FindElement(By.LinkText("Gift Cards")).Click();
@@ -223,7 +224,7 @@ namespace UnitTestProject_Normal
 
                 //css selector for three elememts
 
-            }
+            }*/
 
 
 
